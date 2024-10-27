@@ -9,22 +9,22 @@
 server_name=$(hostname)
 
 #
-function memory_check() {
+function memory_check() - Displays the amount of free and used memory in the system
     echo ""
         echo "Memory usage on ${server_name} is: "
-        free -h
+        free -h  human output field scaled to 3 digit unit ex. byte
         echo ""
 }
 
-function cpu_check() {
+function cpu_check() {-Check how long the sysyem has been running
     echo ""
         echo "CPU load on ${server_name} is: "
     echo ""
         uptime
-    echo ""
+    echo ""  Results are typically in one line showing the time in minutes
 }
 
-function tcp_check() {
+function tcp_check() {checks conections 
     echo ""
         echo "TCP connections on ${server_name}: "
     echo ""
@@ -32,12 +32,12 @@ function tcp_check() {
     echo ""
 }
 
-function kernel_check() {
+function kernel_check() { 
     echo ""
         echo "Kernel version on ${server_name} is: "
         echo ""
-        uname -r
-    echo ""
+        uname -r  print system info - kernel release
+    echo ""  
 }
 
 function all_checks() {
